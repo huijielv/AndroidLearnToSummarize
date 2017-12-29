@@ -6,17 +6,23 @@ import android.util.Log;
 
 import java.util.Arrays;
 
+import utils.BasicSort;
+import utils.BinarySearch;
+
 
 public class MainActivity extends Activity {
 
-    private static final int[] NUMBERS = {49, 38, 65, 97, 76, 13, 27, 78, 34, 12, 64, 5, 4, 62, 99, 98, 54, 56, 17, 18, 23, 34, 15, 35, 25, 53};
+    private static final int[] NUMBERS = {49, 38, 65, 97, 76, 13};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main1);
-
-        insertSort (NUMBERS);
+        BasicSort basicSort = new BasicSort();
+        basicSort.sort(NUMBERS);
+        BinarySearch.binarySearch( 2,NUMBERS,0,NUMBERS.length-1);
+//        mergingSortUtils.sort(NUMBERS,0, NUMBERS.length-1);
+//        insertSort (NUMBERS);
 
 
 //        TreeNode  root = new TreeNode(1, "A");
